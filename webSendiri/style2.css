@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(vegas.jpg);
+    background-size: 100%;
+    color: wheat;
+}
+#button{
+    block-size: auto;
+}
+.row{
+    margin: 0 auto;
+    display: block;
+}

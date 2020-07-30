@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>DICE DISCOUNT</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-4">
+            <h2>Your Dice </h2>
+            <img src="dice1.jpeg" alt="roll: 1" id="dice1">
+            <img src="dice1.jpeg" alt="roll: 1" id="dice2">
+        </div>
+        <div class="col-4">
+            <h2>Our Dice</h2>
+            <img src="dice1.jpeg" alt="roll: 1" id="theDice1">
+            <img src="dice1.jpeg" alt="roll: 1" id="theDice2">
+        </div>
+        <div class="col-4">
+            <h1 id="message">goodluck</h1>
+            <button id="button" onclick="throwdice()"> Roll the Dice</button>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        let discount = throwdice
+
+        function throwdice() {
+            let random1= Math.round(Math.random()*5)+1;
+            let random2= Math.round(Math.random()*5)+1;
+            let random3= Math.round(Math.random()*5)+1;
+            let random4= Math.round(Math.random()*5)+1; 
+
+            document.getElementById("dice1").src= "dice" + random1 + ".jpeg"
+            document.getElementById("dice2").src= "dice" + random2 + ".jpeg"
+            document.getElementById("theDice1").src= "dice" + random3 + ".jpeg"
+            document.getElementById("theDice2").src= "dice" + random4 + ".jpeg"
+            
+            let side_alt = ["roll: 1","roll: 2","roll: 3","roll: 4","roll: 5","roll: 6"]
+            document.getElementById("dice1").alt = side_alt[random1-1]
+            document.getElementById("dice2").alt = side_alt[random2-1]
+            document.getElementById("theDice1").alt = side_alt[random3-1]
+            document.getElementById("theDice2").alt = side_alt[random4-1]
+            
+            document.getElementById("button").remove()
+            let x = winning_point(random1,random2,random3,random4)
+            return x
+        }
+        function winning_point(rdm1,rdm2,rdm3,rdm4){
+            let customer_point = rdm1 + rdm2 + 2;
+            let ai_point = rdm3 + rdm4 + 2;
+            let getDiscount = winner(customer_point, ai_point);
+            document.getElementById("message").innerText = getDiscount[0];
+            return getDiscount[1]
+        }
+        
+
+        function winner(customer, ai){
+            if(customer < ai){
+                return [`Unlucky`, 0]
+            }else if(customer > ai){
+                let x = 30
+                return[`Jackpot 30% off`, x]
+            }else if(customer == ai){
+                let x = 10
+                return [`you are lucky.Get 10% off`, x]
+            }
+        }
+        //localStorage.setItem(discount);
+    </script>
+
+</body>
+</html>
