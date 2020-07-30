@@ -1,2 +1,0 @@
-# VIKRY.github.io
-Assignments
