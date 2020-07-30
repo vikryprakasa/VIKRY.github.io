@@ -3,14 +3,23 @@
     padding: 0;
 }
 body{
-    background-image: url(vegas.jpg);
+    background-image: url(img/vegas.jpg);
     background-size: 100%;
     color: wheat;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    display: inline;
 }
 #button{
     block-size: auto;
 }
-.row{
+.col-4{
+    top: 50%;
+    left: 32%;
     margin: 0 auto;
     display: block;
+}
+.img{
+    display: inline-block;
 }
