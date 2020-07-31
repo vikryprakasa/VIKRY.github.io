@@ -5,21 +5,52 @@
 body{
     background-image: url(img/vegas.jpg);
     background-size: 100%;
-    color: wheat;
+    color:gold;
     margin: 0 auto;
     display: block;
     text-align: center;
     display: inline;
 }
+h1{
+    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
+}
+h2{
+    font-size: 30px;
+}
+.header1{
+    margin-top: 10px;
+}
 #button{
-    block-size: auto;
+    background-color:black;
+    block-size: 50px;
+    border: inset wheat;
+    font-size: 20px;
+    color: gold;
+}
+.row{
+    margin-top: 20%;
 }
 .col-4{
-    top: 50%;
-    left: 32%;
-    margin: 0 auto;
-    display: block;
+    float: right ;
+    padding-right: 20%;
+    
+}
+.col-3{
+    float: left;
+    padding-left: 20%;
 }
 .img{
     display: inline-block;
+    padding:50px;
+}
+.message{
+    text-align: center;
+    margin-top: 10%;
+}
+#versus{
+    margin-top: 7%;
+    text-align: center;
+    display: inline-block
+    
 }
